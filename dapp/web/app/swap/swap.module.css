@@ -1,4 +1,4 @@
-.body{
+.body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +9,7 @@
 
 .innerContainer {
   width: 600px;
-  background-color: #100f0f;
+  background-color: #121926;
   padding: 20px;
   border-radius: 12px;
   gap: 25px;
@@ -22,11 +22,10 @@
 .inputContainer {
   display: flex;
   flex-direction: column;
-  /* align-items: center; Center the inputs */
-  width: 100%; /* Ensure the container takes full width */
+  width: 100%;
 }
 
-.labels{
+.labels {
   font-weight: bold;
   margin-bottom: 15px;
   font-size: 20px;
@@ -35,13 +34,9 @@
 .inputField,
 .selectField,
 .button {
-  width: 90%; /* Set all to the same width */
-  margin-left: auto; /* These two lines ensure the inputs */
-  margin-right: auto; /* and button are centered */
-}
-
-.inputField,
-.selectField {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 12px;
   font-size: 16px;
   background-color: #202939;
@@ -51,51 +46,45 @@
   margin-bottom: 10px;
 }
 
-.inputField{
+.inputField {
   max-width: 515px;
 }
 
-.selectField{
-  max-width:550px;
+.selectField {
+  max-width: 550px;
+  background: url('data:image/svg+xml;utf8,<svg ...></svg>') no-repeat right 10px center / 16px 16px #202939;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .inputField:focus,
 .selectField:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #eef2f6; /* Or any color that fits your design */
+  box-shadow: 0 0 0 2px #eef2f6;
 }
 
 .button {
   max-width: 550px;
   padding: 10px;
-  background-color: purple;
+  background-color: black;
   color: white;
-  border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  transition: background-color 0.3s ease;
 }
 
 .button:disabled {
-  background-color: rgb(154,154,178); /* Make sure the button is greyed out */
-  cursor: not-allowed; /* Change cursor on hover */
+  background-color: rgb(154, 164, 178);
+  cursor: not-allowed;
 }
 
 .button:hover {
-  background-color: #a63db8; /* Darker shade of purple for hover state */
+  background-color: #4b5565;
 }
 
-/* Add a custom dropdown arrow for select fields */
-.selectField {
-  background: url('data:image/svg+xml;utf8,<svg ...></svg>') no-repeat right 10px center / 16px 16px #202939;
-  -webkit-appearance: none; /* Removes default styling on select elements */
-  -moz-appearance: none;
-  appearance: none;
-}
-
-/* Add any additional responsive styles if necessary */
 @media (max-width: 640px) {
   .innerContainer {
-    width: 90%; /* Adjust width for smaller screens */
+    width: 90%;
   }
 }
