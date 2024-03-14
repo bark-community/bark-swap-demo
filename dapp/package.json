@@ -1,0 +1,57 @@
+{
+  "name": "@bark-swap/source",
+  "version": "1.0.0-alpha",
+  "license": "MIT",
+  "scripts": {
+    "build": "nx build web",
+    "dev": "nx serve web"
+  },
+  "private": true,
+  "dependencies": {
+    "@solana-developers/preset-next": "2.2.0",
+    "@solana/spl-token": "0.4.1",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "@solana/wallet-adapter-solflare": "^0.6.28",
+    "@solana/wallet-adapter-phantom": "0.9.24",
+    "@solana/wallet-adapter-walletconnect": "0.1.16",
+    "@solana/web3.js": "1.91.1",
+    "@tanstack/react-query-next-experimental": "5.28.0",
+    "bs58": "5.0.0",
+    "buffer": "6.0.3",
+    "cross-fetch": "^4.0.0",
+    "encoding": "0.1.13",
+    "next": "14.1.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@nx/eslint": "18.0.8",
+    "@nx/eslint-plugin": "18.0.8",
+    "@nx/js": "18.0.8",
+    "@nx/next": "18.0.8",
+    "@nx/react": "18.0.8",
+    "@nx/workspace": "18.0.8",
+    "@swc-node/register": "~1.9.0",
+    "@swc/core": "~1.4.7",
+    "@testing-library/react": "14.0.0",
+    "@types/node": "20.11.27",
+    "@types/react": "18.2.65",
+    "@types/react-dom": "18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "eslint": "~8.57.0",
+    "eslint-config-next": "13.4.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.34.0",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "nx": "18.0.8",
+    "prettier": "^3.2.5",
+    "typescript": "~5.4.2"
+  }
+}
+
