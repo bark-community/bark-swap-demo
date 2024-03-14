@@ -1,55 +1,34 @@
-// AppLayout.tsx
-
 import { ReactNode } from 'react';
 import Link from 'next/link';
-import { WalletButton } from '../solana/solana-provider';
-import styles from './AppLayout.module.css';
+import { WalletButton } from '@/components/solana/solana-provider'; // Adjust the path as needed
+import styles from './AppLayout.module.css'; // Assuming you're using CSS modules
 
-interface AppLayoutProps {
-  children: ReactNode;
-  logoSrc?: string;
-}
-
-const FooterContent = () => (
-  <p>
-    © 2024 BARK Protocol. All rights reserved{' '}
-    <a
-      href="https://swap.barkprotocol.net/legals/terms-of-use"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Terms of Use
-    </a>
-  </p>
-);
-
-export function AppLayout({ children, logoSrc = '/logo-dark.svg' }: AppLayoutProps) {
-  const renderLogo = !!logoSrc;
-
+export function AppLayout({ children }: { children: ReactNode }) {
   return (
     <div className={styles.container}>
-      <header className={`${styles.flex} ${styles.header}`}>
-        {renderLogo && (
-          <div>
-            <Link href="/" passHref>
-              <a>
-                <img className={styles.logo} src={logoSrc} alt="Bark Logo" />
-              </a>
-            </Link>
-          </div>
-        )}
-        <div>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <Link href="/">
+            <img src="/logo-dark.svg" height={84} alt="BARK Logo" />
+          </Link>
+        </div>
+        <div className={styles.walletButton}>
           <WalletButton />
         </div>
       </header>
       <main className={styles.main}>{children}</main>
-      {children && (
-        <footer className={styles.footer}>
-          <aside>
-            <FooterContent />
-          </aside>
-        </footer>
-      )}
+      <footer className={styles.footer}>
+        <p>
+          © 2024 BARK Protocol. All rights reserved.{' '}
+          <a
+            href="https://swap.barkprotocol.net/legals/terms-of-use"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Terms of Use
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }
