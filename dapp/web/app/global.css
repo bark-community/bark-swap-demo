@@ -1,0 +1,97 @@
+/* Normalize box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset default margin and padding for HTML, body, and #root */
+html,
+body,
+#root {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Define common values as CSS variables */
+:root {
+  --spacing-xs: 8px;
+  --spacing-md: 12px;
+  --menu-color: #ffffff; /* Menu background color (white) */
+  --primary-color: #111927; /* Menu font color */
+  --footer-background-color: #ffffff; /* Footer background color */
+  --footer-text-color: #9DA4AE; /* Footer text color */
+  --gradient-start: #ffffff; /* Gradient start color (white) */
+  --gradient-end: #ffffff; /* Gradient end color (light grey) */
+  --font-size-base: 16px; /* Base font size for responsive typography */
+}
+
+/* Use system font stack with fallback */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--primary-text-color);
+  background-color: #F3F4F6; /* Set background color */
+}
+
+/* Global reset */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote,
+fieldset,
+legend,
+textarea,
+th,
+td,
+button,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+/* Normalize line height */
+body {
+  line-height: 1.6; /* Improved readability with increased line height */
+}
+
+/* Define color palette */
+:root {
+  --primary-text-color: #111927;
+  --secondary-text-color: #566372; /* Adjusted secondary text color for better contrast */
+  --link-color: #E5E7EB; /* Changed link color to a lighter grey */
+  --link-hover-color: #aab3bf; /* Changed link hover color to a darker grey */
+}
+
+/* Accessibility styles */
+:focus {
+  outline: 2px solid #e0e0e0; /* Improved focus outline color */
+  outline-offset: 2px;
+}
+
+
+/* Responsive typography */
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: calc(var(--font-size-base) * 0.875);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    font-size: calc(var(--font-size-base) * 0.75);
+  }
+}
+
+/* Add your additional styles here */

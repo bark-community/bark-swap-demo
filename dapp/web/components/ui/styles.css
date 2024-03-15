@@ -1,0 +1,85 @@
+/* Header styles */
+.header {
+    background: var(--menu-color);
+    color: var(--primary-color);
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo styles */
+  .logo {
+    height: 84px;
+    cursor: pointer;
+  }
+  
+  /* Main content styles */
+  .main {
+    flex-grow: 1;
+    padding: var(--spacing-md);
+  }
+  
+  /* Footer styles */
+  .footer {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: var(--footer-text-color);
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button styles */
+  .button {
+    background: var(--menu-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button hover styles */
+  .button:hover {
+    background: #455A64;
+    transform: translateY(-2px);
+  }
+  
+  /* Button focus styles */
+  .button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Button active styles */
+  .button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    .header,
+    .footer {
+      padding: var(--spacing-xs);
+    }
+  
+    .main {
+      padding: var(--spacing-xs) var(--spacing-md);
+    }
+  
+    .button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  

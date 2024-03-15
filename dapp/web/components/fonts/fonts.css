@@ -1,0 +1,50 @@
+/* fonts.css */
+
+/* Font face for Inter Regular */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Inter-Regular.ttf') format('truetype');
+  }
+  
+  /* Font face for Inter Medium */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/Inter-Medium.ttf') format('truetype');
+  }
+  
+  /* Font face for Inter Semi-bold */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/Inter-SemiBold.ttf') format('truetype');
+  }
+  
+  /* Font face for Inter Bold */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/Inter-Bold.ttf') format('truetype');
+  }
+  
+  /* Font face for Inter Extra-bold */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/Inter-ExtraBold.ttf') format('truetype');
+  }
+  
+  /* Font face for Inter Black */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    src: url('/fonts/Inter-Black.ttf') format('truetype');
+  }
+  
