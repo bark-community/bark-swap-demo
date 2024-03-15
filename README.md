@@ -1,4 +1,6 @@
-![BarkSwap](assets/hero.png)
+<div style="display: flex; justify-content: center;">
+  <img src="github/header.png" alt="BarkSwap Header Image" />
+</div>
 
 # BarkSwap
 
