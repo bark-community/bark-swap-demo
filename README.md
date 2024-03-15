@@ -2,13 +2,13 @@
   <img src="https://github.com/bark-community/bark-swap-demo/blob/00a98069ae23063cfcd94aaa3734602aad65c8d1/.github/header.png" alt="BarkSwap Header Image" />
 </div>
 
-# BarkSwap
+# Decentralized Exchange
 
 BarkSwap is a decentralized exchange (DEX) built on the Solana blockchain, offering users seamless token swapping functionality. This repository contains the source code for the BarkSwap decentralized application (dApp).
 
 ## Table of Contents
 
-- [BarkSwap](#barkswap)
+- [Decentralized Exchange](#decentralized-exchange)
   - [Table of Contents](#table-of-contents)
   - [Setup](#setup)
   - [API Implementation](#api-implementation)
