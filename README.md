@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content: center;">
-  <img src="https://github.com/bark-community/github/header.png" alt="BarkSwap Header Image" />
+  <img src="https://github.com/bark-community/.github/header.png" alt="BarkSwap Header Image" />
 </div>
 
 # BarkSwap
