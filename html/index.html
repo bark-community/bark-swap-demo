@@ -1,53 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jupiter Swap</title>
+  <title>BarkSwap</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
   <style>
     body {
-      background-color: black;
-      color: white;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #333;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
+    }
+
+    .hero-section {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('./assets/background-white.png') no-repeat center/cover;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .hero-text {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .subtext {
+      font-size: 1.6rem;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .description {
+      max-width: 800px;
+      margin-top: 20px;
+      font-size: 1.2rem;
     }
 
     #jupiter-terminal {
-      width: 600px;
-      height: 1200px;
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      margin-top: 50px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .hero-text {
+        font-size: 2.5rem;
+      }
+
+      .subtext {
+        font-size: 1.4rem;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+
+      #jupiter-terminal {
+        height: 300px;
+      }
     }
   </style>
-  <script src="https://terminal.jup.ag/main-v2.js" data-preload defer></script>
 </head>
-
 <body>
-  <h1>Jupiter Swap Demo</h1>
+  <div class="hero-section" id="home">
+    <h1 class="hero-text">BarkSwap</h1>
+    <p class="subtext">The best place to find your furry friend</p>
+    <p class="description">BarkSwap is a community-driven platform connecting pet lovers and breeders. Whether you're looking for a new furry friend to join your family or seeking a loving home for your pets, BarkSwap is here to help you find the perfect match.</p>
+  </div>
+  
   <div id="jupiter-terminal"></div>
+
+  <script async src="https://terminal.jup.ag/main-v2.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      if (typeof window.Jupiter !== 'undefined') {
+        initializeTerminal();
+      } else {
+        loadJupiterScript();
+      }
+    });
 
-      console.log('LOADED')
-      
-      //create jupiter-terminal div
-      const jupiterTerminal = document.createElement('div')
-      jupiterTerminal.id = 'jupiter-terminal'
-      document.body.appendChild(jupiterTerminal)
+    function loadJupiterScript() {
+      var script = document.createElement('script');
+      script.src = "https://terminal.jup.ag/main-v2.js";
+      document.head.appendChild(script);
+      script.onload = initializeTerminal;
+    }
 
-      // initialize the terminal
+    function initializeTerminal() {
+      if (!document.getElementById('jupiter-terminal')) {
+        console.error('Jupiter Terminal container not found.');
+        return;
+      }
+
       window.Jupiter.init({
         displayMode: "integrated",
         integratedTargetId: "jupiter-terminal",
-        endpoint: "https://mainnet.helius-rpc.com/?api-key=YOUR_API_KEY_HERE",
+        endpoint: "https://mainnet.helius-rpc.com/",
         formProps: {
           fixedOutputMint: false
         }
       });
-    });
+    }
   </script>
 </body>
-
 </html>
+

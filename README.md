@@ -1,3 +1,5 @@
+![BarkSwap](assets/hero.png)
+
 # BarkSwap
 
 BarkSwap is a decentralized exchange (DEX) built on the Solana blockchain, offering users seamless token swapping functionality. This repository contains the source code for the BarkSwap decentralized application (dApp).
@@ -21,8 +23,7 @@ To set up BarkSwap locally, follow these steps:
 
    ```bash
    git clone https://github.com/bark-community/bark-swap/
-   cd dapp
-   cd web
+   cd dapp && cd web
    npm i
    ```
 
@@ -40,14 +41,14 @@ The API implementation is located at [dapp/web/app/swap/page.tsx](https://github
 
 ## Jupiter Terminal Vs. API
 
-[Jupiter Terminal](https://terminal.jup.ag/) is a user interface that integrates into BarkSwap by linking it in the HTML. The API utilizes Jupiter's quote and swap endpoints and requires building the BarkSwap front-end/UI.
+BarkSwap is based on Jupiter Terminal and utilizes its API for seamless integration. Jupiter Terminal is a user interface that links into BarkSwap through its HTML. The API implementation utilizes Jupiter's quote and swap endpoints, requiring the development of the BarkSwap front-end/UI.
 
 ## Usage
 
 This repository serves as a reference implementation and is not intended for direct usage.
 
 - Obtain an API key from Helius - [https://www.helius.dev/](https://www.helius.dev/)
-- Create a API key and integrate it into the HTML of the BarkSwap implementation.
+- Create a BARK API key and integrate it into the HTML of the BarkSwap implementation.
 - For create-dapp, you'll need NPM or Yarn. The BarkSwap implementation is accessible at `localhost:3000/swap`.
 
 For any questions or issues, please refer to the [GitHub repository](https://github.com/bark-community/bark-swap) or reach out to the BARK community.
