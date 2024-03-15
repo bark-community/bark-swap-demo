@@ -22,9 +22,9 @@ function Page() {
         strictTokenList: false,
         defaultExplorer: "SolanaFM",
         formProps: {
-          initialAmount: "888888880000",
+          initialAmount: "100000",
           initialInputMint: "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
-          initialOutputMint: "AZsHEMXd36Bj1EMNXhowJajpUXzrKcK57wW4ZGXVa7yR",
+          initialOutputMint: "BARKhLzdWbyZiP3LNoD9boy7MrAy4CVXEToDyYGeEBKF",
         },
       });
     } else {
