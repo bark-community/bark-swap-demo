@@ -1,3 +1,4 @@
+```html
 <div style="display: flex; justify-content: center;">
   <img src="https://github.com/bark-community/bark-swap-demo/blob/00a98069ae23063cfcd94aaa3734602aad65c8d1/.github/header.png" alt="BarkSwap Header Image" />
 </div>
@@ -55,6 +56,10 @@ This repository serves as a reference implementation and is not intended for dir
 
 For any questions or issues, please refer to the [GitHub repository](https://github.com/bark-community/bark-swap) or reach out to the BARK community.
 
+## BarkSwap Product Implementation: 
+
+- **MVP Version:** https://github.com/bark-community/prediction-platform/tree/main
+
 ## Contributing
 
 Contributions are welcome! Fork the repository, make your changes, and submit a pull request.
@@ -62,3 +67,5 @@ Contributions are welcome! Fork the repository, make your changes, and submit a 
 ## License
 
 [MIT License](LICENSE).
+</div>
+```
