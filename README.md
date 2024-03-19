@@ -59,10 +59,6 @@ For any questions or issues, please refer to the [GitHub repository](https://git
 
 - **MVP Version:** https://github.com/bark-community/prediction-platform/tree/main
 
-## Contributing
-
-Contributions are welcome! Fork the repository, make your changes, and submit a pull request.
-
 ## License
 
 [MIT License](LICENSE).
