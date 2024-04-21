@@ -1,6 +1,6 @@
 'use client';
 
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base' ;
 import { clusterApiUrl } from '@solana/web3.js';
 
 import { createContext, ReactNode, useContext } from 'react';

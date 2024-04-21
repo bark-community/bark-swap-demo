@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react';
-import styles from './page.module.css';
+import styles from './page.module.css' ;
 
 function Page() {
 
@@ -18,17 +18,17 @@ function Page() {
       window.Jupiter.init({ 
         displayMode: "integrated",
         integratedTargetId: "integrated-terminal",
-        endpoint: "https://mainnet.helius-rpc.com/?api-key=43acd58f-d760-4b28-a418-762dc9aba97e",
+        endpoint: "https://mainnet.helius-rpc.com/?api-key=YOUR_API_KEY_HERE",
         strictTokenList: false,
         defaultExplorer: "SolanaFM",
         formProps: {
-          initialAmount: "100000",
+          initialAmount: "888888880000",
           initialInputMint: "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
           initialOutputMint: "GsFjUCEsRwXHyahR8XsnnJYrgxBjADwnNJ1wbJbGdMVK",
         },
       });
     } else {
-      console.error("BarkSwap script not loaded yet");
+      console.error("Jupiter script not loaded yet");
     }
   }
   return (

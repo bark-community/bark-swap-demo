@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties } from 'react' ;
 import { Root } from 'react-dom/client';
 import { createStore } from 'jotai';
 import { Wallet } from '@jup-ag/wallet-adapter';
@@ -21,7 +21,7 @@ export type WidgetPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-
 export type WidgetSize = 'sm' | 'default';
 
 export interface FormProps {
-  /** Default to `ExactIn`. ExactOut can be used to get an exact output of a BARK or other token (e.g. for Payments) */
+  /** Default to `ExactIn`. ExactOut can be used to get an exact output of a token (e.g. for Payments) */
   swapMode?: SwapMode;
   /** Initial amount to swap */
   initialAmount?: string;
@@ -73,11 +73,11 @@ export interface IInit {
   endpoint: string;
   /** TODO: Update to use the new platform fee and accounts */
   platformFeeAndAccounts?: PlatformFeeAndAccounts;
-  /** Configure Terminal's behavior and allowed actions for our user */
+  /** Configure Terminal's behavior and allowed actions for your user */
   formProps?: FormProps;
   /** Only allow strict token by [Jupiter Token List API](https://station.jup.ag/docs/token-list/token-list-api) */
   strictTokenList?: boolean;
-  /** Default explorer for our user */
+  /** Default explorer for your user */
   defaultExplorer?: DEFAULT_EXPLORER;
   /** Auto connect to wallet on subsequent visits */
   autoConnect?: boolean;
@@ -98,15 +98,15 @@ export interface IInit {
   /** In case additional styling is needed for Terminal container */
   containerClassName?: string;
 
-  /** When true, wallet connection are handled by BarkSwap dApp, and use `syncProps()` to synchronize wallet state with Terminal */
+  /** When true, wallet connection are handled by your dApp, and use `syncProps()` to synchronize wallet state with Terminal */
   enableWalletPassthrough?: boolean;
   /** Optional, if wallet state is ready, you can pass it in here, or just use `syncProps()` */
   passthroughWalletContextState?: WalletContextState;
-  /** When enableWalletPassthrough is true, this allows Terminal to callback BarkSwap dApp's wallet connection flow */
+  /** When enableWalletPassthrough is true, this allows Terminal to callback your dApp's wallet connection flow */
   onRequestConnectWallet?: () => void | Promise<void>;
 
   /** Callbacks */
-  /** When an error has occurred during swap */
+  /** When an error has occured during swap */
   onSwapError?: ({ error, quoteResponseMeta }: { error?: TransactionError; quoteResponseMeta: QuoteResponseMeta | null }) => void;
   /** When a swap has been successful */
   onSuccess?: ({ txid, swapResult, quoteResponseMeta }: { txid: string; swapResult: SwapResult; quoteResponseMeta: QuoteResponseMeta | null }) => void;

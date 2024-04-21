@@ -1,105 +1,96 @@
-/* global.css */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  color-scheme: light dark;
-}
-
-
-/* General styling adjustments for consistency */
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/* Header styles */
-header {
+.body {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 24px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  height: 100vh; /* Use viewport height for full height */
+  font-family: 'Inter', sans-serif; /* Fallback to sans-serif */
 }
 
-/* Navigation and logo styles */
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-}
-
-.logo-image {
-  height: 40px;
-  margin-right: 12px;
-}
-
-/* Styling for main content area */
-main {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: #f0f0f0;
-}
-
-/* Specific styles for trading or swap interface */
-.swap-container {
-  background-color: #ffffff;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.swap-input {
+.innerContainer {
+  max-width: 600px; /* Use max-width for better responsiveness */
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
+  background-color: #100f0f;
+  padding: 20px;
+  border-radius: 12px;
+  gap: 25px;
+  border: 1px solid #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
-.swap-button {
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.labels {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.inputField,
+.selectField,
+.button {
   width: 100%;
   padding: 12px;
-  background-color: #4a4c54; /* Using a defined color variable */
+  font-size: 16px;
+  background-color: #333;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-sizing: border-box; /* Add this to include padding and border in width */
+}
+
+.inputField {
+  max-width: 600px; /* Adjust to the widest input */
+}
+
+.selectField {
+  max-width: 600px; /* Adjust to the widest input */
+}
+
+.inputField:focus,
+.selectField:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #cccccc; /* Or any color that fits your design */
+}
+
+.button {
+  max-width: 600px; /* Adjust to the widest input */
+  padding: 12px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.swap-button:hover {
-  background-color: #666974; /* Darker shade on hover */
+.button:disabled {
+  background-color: rgb(66, 69, 88); /* Make sure the button is greyed out */
+  cursor: not-allowed; /* Change cursor on hover */
 }
 
-/* Footer styling */
-footer {
-  padding: 20px;
-  background-color: #eaeaea;
-  text-align: center;
+.button:hover {
+  background-color: rgba(72, 72, 72, 0.2); /* Darker shade of dark grey for hover state */
 }
 
-/* Media queries for responsive adjustments */
-@media (max-width: 768px) {
-  header, .swap-container {
-    flex-direction: column;
-    padding: 16px;
-  }
+/* Add a custom dropdown arrow for select fields */
+.selectField {
+  background: url('data:image/svg+xml;utf8,<svg ...></svg>') no-repeat right 10px center / 16px 16px #333;
+  -webkit-appearance: none; /* Removes default styling on select elements */
+  -moz-appearance: none;
+  appearance: none;
+}
 
-  .logo-link {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo-image {
-    margin: 0 0 10px 0;
+/* Add any additional responsive styles if necessary */
+@media (max-width: 640px) {
+  .innerContainer {
+    width: 90%; /* Adjust width for smaller screens */
   }
 }

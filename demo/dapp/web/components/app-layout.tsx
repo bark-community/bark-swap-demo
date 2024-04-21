@@ -1,56 +1,46 @@
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { ReactNode } from 'react';
-import Link from 'next/link';
+import Link from 'next/link'; // Reintroduce Link for navigational purposes
 
 export function AppLayout({ children }: { children: ReactNode }) {
   return (
-    <html>
-      <body style={{ margin: 0 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '6px 12px',
-            }}
-          >
-            <div>
-              <Link href="/">
-                <a>
-                  <img src="/logo.svg" height={24} alt="BARK Logo" />
-                </a>
-              </Link>
-            </div>
-            <div>
-              <WalletMultiButton />
-            </div>
-          </div>
-          <div style={{ flexGrow: 1, padding: '6px' }}>{children}</div>
-          <footer
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '6px 10px',
-              backgroundColor: '#f5f5f6',
-            }}
-          >
-            <aside>
-              <p>
-                © {new Date().getFullYear()} BARK Protocol. All rights reserved{' '}
-                <a
-                  href="https://swap.barkprotocol.net/legals/terms-of-use"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Terms of Use
-                </a>
-              </p>
-            </aside>
-          </footer>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: '#F7FAFC' }}>
+      <header
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '12px 24px',
+          backgroundColor: '#FFFFFF',
+          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+        }}
+      >
+        <Link href="/" passHref>
+          <a style={{ textDecoration: 'none', color: '#2B6CB0', fontWeight: 'bold', fontSize: '24px' }}>
+            <h3 style={{ margin: 0 }}>BarkSwap</h3>
+          </a>
+        </Link>
+        <div>
+          <WalletMultiButton style={{ fontWeight: 'bold', backgroundColor: '#3182CE', color: '#FFFFFF' }} />
         </div>
-      </body>
-    </html>
+      </header>
+      <main style={{ flex: 1, padding: '12px', overflow: 'auto' }}>
+        {children}
+      </main>
+      <footer
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '12px 10px',
+          backgroundColor: '#EDF2F7',
+          borderTop: '1px solid #E2E8F0',
+        }}
+      >
+        <p style={{ margin: 0, fontSize: '14px', color: '#4A5568' }}>
+          © {new Date().getFullYear()} BarkSwap. All rights reserved.
+        </p>
+      </footer>
+    </div>
   );
 }

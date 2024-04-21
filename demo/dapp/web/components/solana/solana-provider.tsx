@@ -1,6 +1,6 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic' ;
 
 import { WalletError } from '@solana/wallet-adapter-base';
 import {
@@ -44,7 +44,7 @@ export function SolanaProvider({ children }: { children: ReactNode }) {
 
   return (
     <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={wallets} onError={onError} autoConnect={false}>
+      <WalletProvider wallets={wallets} onError={onError} autoConnect={true}>
         <WalletModalProvider>{children}</WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>

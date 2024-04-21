@@ -6,7 +6,7 @@ import Head from 'next/head';
 
 export const metadata = {
   title: 'bark-swap',
-  description: 'The premier platform for trading tokens with ease and security',
+  description: 'Decentralized Exchange',
 };
 
 export default function RootLayout({children,}: {children: React.ReactNode; }) {
