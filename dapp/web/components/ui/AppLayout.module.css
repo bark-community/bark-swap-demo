@@ -1,83 +1,86 @@
-/* Define common values as CSS variables */
-.root {
-  --spacing-xs: 8px;
-  --spacing-md: 12px;
-  --menu-color: #37474F; /* Menu background color (modern grey) */
-  --primary-color: #FFFFFF; /* Menu font color */
-  --footer-background-color: #202939; /* Footer background color */
-  --footer-text-color: #9AA4B2; /* Footer text color */
-  --gradient-start: #546E7A; /* Gradient start color (modern grey) */
-  --gradient-end: #455A64; /* Gradient end color (modern grey) */
+html, body, #root {
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.container {
+:root {
+  --color-ui-50: #F5F5F6;
+  --color-ui-100: #E5E6E8;
+  --color-ui-200: #CDCFD4;
+  --color-ui-300: #ABAEB5;
+  --color-ui-400: #81848F;
+  --color-ui-500: #666974;
+  --color-ui-600: #51535C;
+  --color-ui-700: #4A4C54;
+  --color-ui-800: #424348;
+  --color-ui-900: #3A3B3F;
+  --color-ui-950: #242528;
+  --color-accent: var(--color-ui-700);
+  --color-accent-hover: var(--color-ui-600);
+  --color-disabled: rgb(84, 61, 84);
+  color-scheme: light dark;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.app-layout {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Use min-height instead of height for better responsiveness */
+  height: 100%;
 }
 
-.header {
-  background: var(--menu-color); /* Use menu color for background */
-  color: var(--primary-color); /* Use primary color for font color */
-  padding: var(--spacing-md);
+.app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+  padding: 6px 12px;
+  background-color: var(--color-ui-950);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  height: 84px;
-  cursor: pointer; /* Add cursor pointer for better UX */
-}
-
-.main {
+.app-content {
   flex-grow: 1;
-  padding: var(--spacing-md);
+  padding: 6px;
 }
 
-.footer {
-  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); /* Gradient background */
-  color: var(--footer-text-color);
-  padding: var(--spacing-md);
+.app-footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+  padding: 6px 10px;
+  background-color: var(--color-ui-800);
+  color: var(--color-ui-50);
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .button {
-  background: var(--menu-color); /* Use menu color for background */
-  color: var(--primary-color); /* Use primary color for font color */
   padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 8px;
+  background-color: var(--color-accent);
+  color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Add smooth transition */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.button:hover {
-  background: #455A64; /* Darker shade of menu color on hover */
+.button:hover, .button:focus {
+  background-color: var(--color-accent-hover);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
-
-/* Media Queries for Responsive Design */
 
 @media (max-width: 768px) {
-  .header,
-  .footer {
-    padding: var(--spacing-xs);
+  .app-header, .app-footer {
+    flex-direction: column;
+    padding: 10px;
   }
 
-  .main {
-    padding: var(--spacing-xs) var(--spacing-md);
+  .logo {
+    height: 40px;
+    margin-right: 0;
   }
 
   .button {
-    padding: 8px 16px;
-    font-size: 14px;
+    width: 100%;
   }
 }

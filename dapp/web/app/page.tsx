@@ -24,7 +24,7 @@ function Page() {
         formProps: {
           initialAmount: "100000",
           initialInputMint: "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
-          initialOutputMint: "BARKhLzdWbyZiP3LNoD9boy7MrAy4CVXEToDyYGeEBKF",
+          initialOutputMint: "GsFjUCEsRwXHyahR8XsnnJYrgxBjADwnNJ1wbJbGdMVK",
         },
       });
     } else {

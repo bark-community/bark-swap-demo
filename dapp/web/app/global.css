@@ -31,7 +31,7 @@ body,
 body {
   font-family: 'Segoe UI', sans-serif;
   color: var(--primary-text-color);
-  background-color: #F3F4F6; /* Set background color */
+  background-color: #f5f5f6; /* Set background color */
 }
 
 /* Global reset */

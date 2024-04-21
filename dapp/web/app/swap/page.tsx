@@ -8,7 +8,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 const assets = [
   { name: 'SOL', mint: 'So11111111111111111111111111111111111111112', decimals: 9},
   { name: 'USDC', mint: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v', decimals: 6},
-  { name: 'BARK', mint: 'BARKhLzdWbyZiP3LNoD9boy7MrAy4CVXEToDyYGeEBKF', decimals: 3},
+  { name: 'BARK', mint: 'GsFjUCEsRwXHyahR8XsnnJYrgxBjADwnNJ1wbJbGdMVK', decimals: 6},
   { name: 'BONK', mint: 'DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263', decimals: 5 },
   { name: 'WIF', mint: 'EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm', decimals: 6},
 ];
