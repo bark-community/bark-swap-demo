@@ -1,6 +1,6 @@
 {
   "name": "@bark-swap/source",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "build": "nx build web",
