@@ -1,50 +1,25 @@
-html, body, #root {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-:root {
-  --color-ui-50: #F5F5F6;
-  --color-ui-100: #E5E6E8;
-  --color-ui-200: #CDCFD4;
-  --color-ui-300: #ABAEB5;
-  --color-ui-400: #81848F;
-  --color-ui-500: #666974;
-  --color-ui-600: #51535C;
-  --color-ui-700: #4A4C54;
-  --color-ui-800: #424348;
-  --color-ui-900: #3A3B3F;
-  --color-ui-950: #242528;
-  --color-accent: var(--color-ui-700);
-  --color-accent-hover: var(--color-ui-600);
-  --color-disabled: rgb(84, 61, 84);
-  color-scheme: light dark;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-}
-
-.app-layout {
+/* AppLayout.module.css */
+.appLayout {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.app-header {
+.appHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 12px;
+  padding: 12px;
   background-color: var(--color-ui-950);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.app-content {
+.appContent {
   flex-grow: 1;
   padding: 6px;
 }
 
-.app-footer {
+.appFooter {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,35 +27,4 @@ html, body, #root {
   background-color: var(--color-ui-800);
   color: var(--color-ui-50);
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.button {
-  padding: 10px 20px;
-  background-color: var(--color-accent);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.button:hover, .button:focus {
-  background-color: var(--color-accent-hover);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 768px) {
-  .app-header, .app-footer {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .logo {
-    height: 40px;
-    margin-right: 0;
-  }
-
-  .button {
-    width: 100%;
-  }
 }
