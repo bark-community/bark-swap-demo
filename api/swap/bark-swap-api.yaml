@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: BarkSwap API
+  description: API for decentralized exchange on the Solana blockchain
+  version: 1.0.0
+servers:
+  - url: https://api.swap.barkprotocol.net/v1/
+paths:
+  /api/swap:
+    post:
+      summary: Initiate a token swap
+      description: |
+        This endpoint is used to initiate a token swap transaction on the BarkSwap DEX.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SwapRequest'
+      responses:
+        '200':
+          description: Swap transaction initiated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapResponse'
+        '400':
+          description: Bad request. Missing or invalid parameters.
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    SwapRequest:
+      type: object
+      properties:
+        quoteResponse:
+          type: object
+          properties:
+            inAmount:
+              type: string
+            outAmount:
+              type: string
+          required:
+            - inAmount
+            - outAmount
+        userPublicKey:
+          type: string
+          description: Public key of the user initiating the swap
+        wrapAndUnwrapSol:
+          type: boolean
+          description: Indicates whether to wrap and unwrap SOL tokens
+        feeAccount:
+          type: string
+          description: Address of the fee account
+      required:
+        - quoteResponse
+        - userPublicKey
+        - feeAccount
+    SwapResponse:
+      type: object
+      properties:
+        transactionId:
+          type: string
+          description: Unique identifier for the initiated swap transaction

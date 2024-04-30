@@ -20,8 +20,6 @@ All notable changes to the BarkSwap DApp project will be documented in this file
 
 8. **Dependencies:** Verified and updated package dependencies to ensure compatibility and security compliance.
 
-This change log summarizes the improvements made to the Page component, focusing on script loading, error handling, user experience enhancements, and code cleanliness.
-
 ## [1.0.0] - 2024-04-21
 
 ### Added
