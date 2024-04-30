@@ -15,10 +15,13 @@ export function AppLayout({ children }: { children: ReactNode }) {
           boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
         }}
       >
-        <Link href="/" passHref>
-          <a style={{ textDecoration: 'none', color: '#2B6CB0', fontWeight: 'bold', fontSize: '24px' }}>
-            <h3 style={{ margin: 0 }}>BarkSwap</h3>
-          </a>
+        <Link
+          href="/"
+          passHref
+          style={{ textDecoration: 'none', color: '#2B6CB0', fontWeight: 'bold', fontSize: '24px' }}>
+
+          <h3 style={{ margin: 0 }}>BarkSwap</h3>
+
         </Link>
         <div>
           <WalletMultiButton style={{ fontWeight: 'bold', backgroundColor: '#3182CE', color: '#FFFFFF' }} />
