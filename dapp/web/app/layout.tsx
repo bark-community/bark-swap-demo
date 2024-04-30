@@ -4,8 +4,9 @@ import { ClusterProvider } from '@/components/cluster/cluster-data-access';
 import { SolanaProvider } from '@/components/solana/solana-provider';
 import Head from 'next/head';
 
+// Define metadata
 export const metadata = {
-  title: 'bark-swap',
+  title: 'BarkSwap',
   description: 'Decentralized Exchange',
 };
 

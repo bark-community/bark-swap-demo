@@ -2,6 +2,26 @@
 
 All notable changes to the BarkSwap DApp project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1]
+
+1. **Improved Script Loading:** Refactored the script loading process to improve efficiency and error handling. Now, the script is loaded asynchronously, and appropriate error handling is implemented for failed script loading.
+
+2. **Loading Indicator:** Added a loading indicator to provide visual feedback to users while the Jupiter script is being loaded. This indicator improves the user experience by indicating that the page is still loading.
+
+3. **Code Cleanup:** Removed redundant code and optimized the useEffect hook dependencies to prevent unnecessary re-renders and ensure efficient execution of code.
+
+4. **Error Handling:** Enhanced error handling mechanisms to handle script loading failures more gracefully. Errors are now logged to the console with descriptive messages to aid in debugging.
+
+5. **Refactored Script Initialization:** The initialization process for Jupiter is refactored to ensure smooth integration and to handle any potential errors that may occur during initialization.
+
+6. **Documentation:** Updated code comments and added descriptive comments where necessary to improve code readability and maintainability.
+
+7. **CSS Styles:** Ensured consistency and adherence to project styles by using CSS modules for styling components.
+
+8. **Dependencies:** Verified and updated package dependencies to ensure compatibility and security compliance.
+
+This change log summarizes the improvements made to the Page component, focusing on script loading, error handling, user experience enhancements, and code cleanliness.
+
 ## [1.0.0] - 2024-04-21
 
 ### Added

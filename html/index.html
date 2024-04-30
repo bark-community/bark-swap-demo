@@ -4,48 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BarksSwap</title>
+  <title>BarkSwap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: black;
       color: white;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin: 0;
+      height: 100vh;
+    }
+
+    h1 {
+      margin: 20px 0;
     }
 
     #jupiter-terminal {
       width: 600px;
-      height: 1200px;
+      height: 600px;
+      border: 1px solid #555;
     }
   </style>
-  <script src="https://terminal.jup.ag/main-v2.js" data-preload defer></script>
 </head>
 
 <body>
   <h1>BarkSwap</h1>
   <div id="jupiter-terminal"></div>
+  <script src="https://terminal.jup.ag/main-v2.js" data-preload defer></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-      console.log('LOADED')
-      
-      //create jupiter-terminal div
-      const jupiterTerminal = document.createElement('div')
-      jupiterTerminal.id = 'jupiter-terminal'
-      document.body.appendChild(jupiterTerminal)
-
-      // initialize the terminal
-      window.Jupiter.init({
-        displayMode: "integrated",
-        integratedTargetId: "jupiter-terminal",
-        endpoint: "https://mainnet.helius-rpc.com/?api-key=YOUR_API_KEY_HERE",
-        formProps: {
-          fixedOutputMint: false
-        }
-      });
+    window.addEventListener('load', function() {
+      console.log('LOADED');
+      // Initialize the terminal
+      if (window.Jupiter) {
+        window.Jupiter.init({
+          displayMode: "integrated",
+          integratedTargetId: "jupiter-terminal",
+          endpoint: "https://mainnet.helius-rpc.com/?api-key=43acd58f-d760-4b28-a418-762dc9aba97e",
+          formProps: {
+            fixedOutputMint: false
+          }
+        });
+      } else {
+        console.error("Jupiter library not loaded.");
+      }
     });
   </script>
 </body>

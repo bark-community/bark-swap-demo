@@ -1,6 +1,6 @@
 {
   "name": "bark-swap",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "A Decentralized Exchange dApp, Jupiter Terminal API",
   "license": "MIT",
   "scripts": {
@@ -18,7 +18,7 @@
     "@solana/wallet-adapter-walletconnect": "0.1.16",
     "@solana/web3.js": "1.91.7",
     "@solana/spl-token": "0.4.6",
-    "@solana/spl-token-swap": "0.4.2",
+    "@solana/spl-token-swap": "0.4.3",
     "@tanstack/react-query-next-experimental": "5.32.0",
     "bs58": "5.0.0",
     "buffer": "6.0.3",

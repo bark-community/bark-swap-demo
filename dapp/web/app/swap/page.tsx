@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { VersionedTransaction, Connection } from '@solana/web3.js';
-import ConfirmationModal from './modals/Confirmation';
+import Confirmation from '../../components/modals/confirmation';
 import styles from './swap.module.css';
 
 const assets = [
@@ -133,7 +133,7 @@ const Swap = () => {
           Swap
         </button>
         {showConfirmation && (
-          <ConfirmationModal
+          <Confirmation
             onConfirm={() => {
               setShowConfirmation(false);
               signAndSendTransaction();

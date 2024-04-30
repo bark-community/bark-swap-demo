@@ -1,24 +1,52 @@
-'use client'
+"use client";
 
-import { useEffect } from 'react';
-import styles from './page.module.css' ;
+import { useEffect, useRef, useState } from 'react';
+import styles from './page.module.css';
 
 function Page() {
+  const [isJupiterLoaded, setIsJupiterLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const scriptRef = useRef(null);
 
   useEffect(() => {
-    // Dynamically load the Jupiter script
-    const script = document.createElement('script');
-    script.src = "https://terminal.jup.ag/main-v2.js";
-    script.onload = () => launchJupiter(); // Initialize Jupiter after the script loads
-    document.head.appendChild(script);
+    const loadScript = () => {
+      scriptRef.current = document.createElement('script');
+      scriptRef.current.src = "https://terminal.jup.ag/main-v2.js";
+      scriptRef.current.onload = handleScriptLoad;
+      scriptRef.current.onerror = handleScriptError;
+      document.head.appendChild(scriptRef.current);
+    };
+
+    loadScript();
+
+    return () => {
+      if (scriptRef.current) {
+        document.head.removeChild(scriptRef.current);
+      }
+    };
   }, []);
 
-  function launchJupiter() {
-    if (window.Jupiter) {
-      window.Jupiter.init({ 
+  useEffect(() => {
+    if (isJupiterLoaded) {
+      initializeJupiter();
+    }
+  }, [isJupiterLoaded]);
+
+  const handleScriptLoad = () => {
+    setIsJupiterLoaded(true);
+  };
+
+  const handleScriptError = () => {
+    setIsLoading(false);
+    console.error("Failed to load Jupiter script");
+  };
+
+  const initializeJupiter = () => {
+    try {
+      window.Jupiter.init({
         displayMode: "integrated",
         integratedTargetId: "integrated-terminal",
-        endpoint: "https://mainnet.helius-rpc.com/?api-key=YOUR_API_KEY_HERE",
+        endpoint: "https://mainnet.helius-rpc.com/?api-key=43acd58f-d760-4b28-a418-762dc9aba97e",
         strictTokenList: false,
         defaultExplorer: "SolanaFM",
         formProps: {
@@ -27,15 +55,20 @@ function Page() {
           initialOutputMint: "GsFjUCEsRwXHyahR8XsnnJYrgxBjADwnNJ1wbJbGdMVK",
         },
       });
-    } else {
-      console.error("Jupiter script not loaded yet");
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      console.error("Error initializing Jupiter:", error);
     }
-  }
+  };
+
   return (
-    <div className={styles.body}>
-
-      <div id="integrated-terminal"></div>
-
+    <div className={styles.pageContainer}>
+      {isLoading ? (
+        <div className={styles.loadingIndicator}>Loading Jupiter...</div>
+      ) : (
+        <div id="integrated-terminal"></div>
+      )}
     </div>
   );
 }
