@@ -1,31 +1,33 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import { WalletButton } from '../solana/solana-provider';
-import { FaTwitter, FaDiscord, FaMedium, FaTelegram, FaGithub } from 'react-icons/fa'; // Import icons
+import { FaTwitter, FaDiscord, FaMedium, FaTelegram, FaGithub } from 'react-icons/fa';
 
 interface AppLayoutProps {
   children: ReactNode;
 }
 
 export function AppLayout({ children }: AppLayoutProps) {
+  const currentYear = new Date().getFullYear();  // Cache the current year for the footer
+
   return (
     <div style={{ margin: 0, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <header style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 50px', backgroundColor: '#ffffff', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
         <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '24px 0' }}>
           <Link href="/" passHref>
-            <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+            <a style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: '#333' }}>
               <img src="/bark-logo.svg" alt="BarkSwap Logo" style={{ height: '48px', marginRight: '10px' }} />
-              <span style={{ fontSize: '1.5em', fontWeight: 'bold', color: '#333' }}></span>
-            </div>
+              BarkSwap
+            </a>
           </Link>
           <WalletButton style={{ backgroundColor: '#333', color: '#fff' }} />
         </div>
         <nav style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '10px 0', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
-          <Link href="/swap" passHref><div style={{ padding: '10px 15px', cursor: 'pointer', color: '#2D3748', fontWeight: '500' }}>Swap</div></Link>
-          <Link href="/pool" passHref><div style={{ padding: '10px 15px', cursor: 'pointer', color: '#2D3748', fontWeight: '500' }}>Pool</div></Link>
-          <Link href="/stake" passHref><div style={{ padding: '10px 15px', cursor: 'pointer', color: '#2D3748', fontWeight: '500' }}>Stake</div></Link>
-          <Link href="/about" passHref><div style={{ padding: '10px 15px', cursor: 'pointer', color: '#2D3748', fontWeight: '500' }}>About</div></Link>
-          <Link href="/faq" passHref><div style={{ padding: '10px 15px', cursor: 'pointer', color: '#2D3748', fontWeight: '500' }}>FAQ</div></Link>
+          <Link href="/swap" passHref><a style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>Swap</a></Link>
+          <Link href="/pool" passHref><a style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>Pool</a></Link>
+          <Link href="/stake" passHref><a style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>Stake</a></Link>
+          <Link href="/about" passHref><a style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>About</a></Link>
+          <Link href="/faq" passHref><a style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>FAQ</a></Link>
         </nav>
       </header>
       <section style={{ padding: '40px', textAlign: 'center', backgroundColor: '#F5F5F6', color: '#27272a' }}>
@@ -54,11 +56,11 @@ export function AppLayout({ children }: AppLayoutProps) {
         </div>
         <aside style={{ textAlign: 'center', color: '#A0AEC0' }}>
           <p style={{ fontSize: '0.9em' }}>
-            © {new Date().getFullYear()} BARK Protocol. All rights reserved.
-            <Link href="https://swap.barkprotocol.net/legals/terms-of-use" passHref>
-              <div style={{ textDecoration: 'none', color: '#CBD5E0', cursor: 'pointer' }}>
+            © {currentYear} BARK Protocol. All rights reserved.
+            <Link href="/terms-of-use" passHref>
+              <a style={{ textDecoration: 'none', color: '#CBD5E0' }}>
                 Terms of Use
-              </div>
+              </a>
             </Link>
           </p>
         </aside>

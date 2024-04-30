@@ -30,8 +30,7 @@ To set up BarkSwap locally, follow these steps:
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/bark-community/bark-swap-demo/
-   cd bark-swap-demo/swap/dapp
-   npm install
+   cd dapp && npm install
    ```
 
 2. **Start the development server:**

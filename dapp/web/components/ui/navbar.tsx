@@ -15,8 +15,10 @@ export function NavBar() {
     >
       <Link href="/" passHref>
         <a style={{ textDecoration: 'none', color: '#333', fontWeight: 'bold', fontSize: '24px' }}>
-        <a aria-label="BarkSwap Home" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/bark-logo.svg" alt="BarkSwap Logo" style={{ height: '48px', marginRight: '10px' }} />
+          <span style={{ display: 'flex', alignItems: 'center' }}>
+            <img src="/bark-logo.svg" alt="BarkSwap Logo" style={{ height: '48px', marginRight: '10px' }} />
+            BarkSwap
+          </span>
         </a>
       </Link>
       <ul style={{ display: 'flex', listStyleType: 'none', margin: 0, padding: 0 }}>
