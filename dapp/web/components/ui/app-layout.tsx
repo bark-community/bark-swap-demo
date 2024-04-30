@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { WalletButton } from '../solana/solana-provider';
 import { FaTwitter, FaDiscord, FaMedium, FaTelegram, FaGithub } from 'react-icons/fa';
 
@@ -8,49 +9,32 @@ interface AppLayoutProps {
 }
 
 export function AppLayout({ children }: AppLayoutProps) {
-  const currentYear = new Date().getFullYear();  // Cache the current year for the footer
+  const currentYear = new Date().getFullYear();
 
   return (
     <div style={{ margin: 0, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <header style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 50px', backgroundColor: '#ffffff', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
         <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '24px 0' }}>
-          <Link
-            href="/"
-            passHref
-            style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: '#333' }}>
-
-            <img src="/bark-logo.svg" alt="BarkSwap Logo" style={{ height: '48px', marginRight: '10px' }} />BarkSwap
+          <Link href="/" passHref style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: '#333' }}>
+            <div style={{ position: 'relative', width: 200, height: 48 }}>
+              <Image src="/bark-logo.svg" alt="BarkSwap Logo" layout="fill" />
+            </div>
+            v1.0
           </Link>
           <WalletButton style={{ backgroundColor: '#333', color: '#fff' }} />
         </div>
         <nav style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '10px 0', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
-          <Link
-            href="/swap"
-            passHref
-            style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>Swap</Link>
-          <Link
-            href="/pool"
-            passHref
-            style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>Pool</Link>
-          <Link
-            href="/stake"
-            passHref
-            style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>Stake</Link>
-          <Link
-            href="/about"
-            passHref
-            style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>About</Link>
-          <Link
-            href="/faq"
-            passHref
-            style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>FAQ</Link>
+          <Link href="/swap" passHref style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>Swap</Link>
+          <Link href="/pool" passHref style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>Pool</Link>
+          <Link href="/stake" passHref style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>Stake</Link>
+          <Link href="/about" passHref style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>About</Link>
+          <Link href="/faq" passHref style={{ padding: '10px 15px', textDecoration: 'none', color: '#2D3748', fontWeight: '500' }}>FAQ</Link>
         </nav>
       </header>
-      <section style={{ padding: '40px', textAlign: 'center', backgroundColor: '#F5F5F6', color: '#27272a' }}>
+      <section style={{ padding: '40px', textAlign: 'center', backgroundColor: '#fffff', color: '#27272a' }}>
         <h1 style={{ fontSize: '2.5em', fontWeight: 'bold', margin: '0 0 20px' }}>Empowering Change through Decentralized Trading</h1>
         <p style={{ fontSize: '1.2em', margin: '10px 0 20px' }}>
-          BarkSwap isn’t just a platform for trading tokens; it's a movement for positive impact. Each transaction includes a small fee, 
-          used to fund initiatives that benefit environmental causes and social development projects.
+          BarkSwap isn't just a platform for trading tokens; it's a movement for positive impact. With every transaction, a small fee is included, dedicated to funding initiatives that benefit environmental causes and social development projects.
         </p>
         <p style={{ fontSize: '1em', fontStyle: 'italic' }}>
           Trade securely and effortlessly, knowing that your actions contribute to a better world.
@@ -73,14 +57,7 @@ export function AppLayout({ children }: AppLayoutProps) {
         <aside style={{ textAlign: 'center', color: '#A0AEC0' }}>
           <p style={{ fontSize: '0.9em' }}>
             © {currentYear} BARK Protocol. All rights reserved.
-            <Link
-              href="/terms-of-use"
-              passHref
-              style={{ textDecoration: 'none', color: '#CBD5E0' }}>
-              
-                Terms of Use
-              
-            </Link>
+            <Link href="/terms-of-use" passHref style={{ textDecoration: 'none', color: '#CBD5E0' }}>Terms of Use</Link>
           </p>
         </aside>
       </footer>
