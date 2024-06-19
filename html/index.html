@@ -8,8 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: black;
-      color: white;
+      background-color: #070707;
+      color: #fff;
       font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
       display: flex;
       flex-direction: column;
@@ -28,31 +28,48 @@
       height: 600px;
       border: 1px solid #555;
     }
+
+    #loading {
+      margin-top: 20px;
+    }
+
+    .fee-section {
+      margin-top: 20px;
+    }
+
+    .fee-section input {
+      margin: 5px;
+    }
+
+    .fee-section div {
+      margin-top: 10px;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
   </style>
 </head>
 
 <body>
-  <h1>BarkSwap</h1>
-  <div id="jupiter-terminal"></div>
+  <main>
+    <h1>BarkSwap</h1>
+    <div id="jupiter-terminal"></div>
+    <div id="loading" aria-live="polite">Loading...</div>
+    <div class="fee-section">
+      <label for="amount">Enter Amount:</label>
+      <input type="number" id="amount" placeholder="Enter amount" min="0" step="0.01">
+      <div id="fee">Calculated Fee: </div>
+      <div id="feedback" class="error"></div>
+    </div>
+  </main>
+  
   <script src="https://terminal.jup.ag/main-v2.js" data-preload defer></script>
-  <script>
-    window.addEventListener('load', function() {
-      console.log('LOADED');
-      // Initialize the terminal
-      if (window.Jupiter) {
-        window.Jupiter.init({
-          displayMode: "integrated",
-          integratedTargetId: "jupiter-terminal",
-          endpoint: "https://mainnet.helius-rpc.com/?api-key=43acd58f-d760-4b28-a418-762dc9aba97e",
-          formProps: {
-            fixedOutputMint: false
-          }
-        });
-      } else {
-        console.error("Jupiter library not loaded.");
-      }
-    });
-  </script>
+  <script src="../app/components/main.js" defer></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 All notable changes to the BarkSwap DApp project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.1]
+## [1.0.2]
 
 1. **Improved Script Loading:** Refactored the script loading process to improve efficiency and error handling. Now, the script is loaded asynchronously, and appropriate error handling is implemented for failed script loading.
 
@@ -19,6 +19,14 @@ All notable changes to the BarkSwap DApp project will be documented in this file
 7. **CSS Styles:** Ensured consistency and adherence to project styles by using CSS modules for styling components.
 
 8. **Dependencies:** Verified and updated package dependencies to ensure compatibility and security compliance.
+
+## [1.0.1]
+
+### Added
+- UI improvements
+
+### Fixed
+- Fixed Bugs
 
 ## [1.0.0] - 2024-04-21
 
